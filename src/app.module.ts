@@ -7,7 +7,10 @@ import { CoffeesModule } from './coffees/coffees.module';
 @Module({
     imports: [
         CoffeesModule,
-        MongooseModule.forRoot('mongodb://localhost:27017/nest-course')
+        MongooseModule.forRoot(
+            'mongodb://localhost:27017/nest-course',
+            { useFindAndModify: false }
+        )
     ],
     controllers: [
         AppController
