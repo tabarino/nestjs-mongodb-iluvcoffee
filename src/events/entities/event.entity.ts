@@ -6,6 +6,7 @@ export class Event extends mongoose.Document {
     @Prop()
     name: string;
 
+    // @Prop({ index: true })
     @Prop()
     type: string;
 
@@ -14,3 +15,7 @@ export class Event extends mongoose.Document {
 }
 
 export const EventSchema = SchemaFactory.createForClass(Event);
+
+// Create Index
+// 1 => ASC / -1 => DESC
+EventSchema.index({ name: 1, type: -1 });
